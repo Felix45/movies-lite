@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore CMS
+# Movies Lite
 
-> This is an online library application that enables users to keep track of books in their library by adding to and removing books from a list. Built with React JS, Redux and CSS.
+> This is a movie streaming site that only streams movies that are free to the public
 
 ## Built With
 
@@ -13,7 +13,7 @@
 ## Live Demo
 |Netlify cloud hosting|
 |----------------------|
-|[Online demo link](https://bookstore-appl.netlify.app/)|
+|[Currently not available]()|
 
 ## Getting Started
 
@@ -26,12 +26,12 @@ npm
 
 ```
 ### Setup
-Clone the repository and change the directory to bookstore
+Clone the repository and change the directory to movies-lite
 
 ``` 
-$ git clone git@github.com:Felix45/bookstore.git
+$ git clone git@github.com:Felix45/movies-lite.git
 
-$ cd bookstore
+$ cd movies-lite
 
 ```
 
@@ -64,7 +64,7 @@ $ http://localhost:3000
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Felix45/bookstore/issues).
+Feel free to check the [issues page](https://github.com/Felix45/movies-lite/issues).
 
 ## Show your support
 
