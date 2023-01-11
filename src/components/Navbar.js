@@ -38,7 +38,7 @@ const Navbar = () => (
       </div>
       <div>
         <form className="hidden md:flex bg-slate-300 flex-row-reverse relative rounded-full no-focus">
-          <input type="text" className="form-input bg-slate-300 pr-4 pl-2 py-2 rounded-full" placeholder="Enter your keywords..." autoComplete="off" />
+          <input type="text" className="form-input bg-slate-300 pr-4 pl-2 py-2 outline-none rounded-full" placeholder="Enter your keywords..." autoComplete="off" />
           <button type="button" className="relative bg-slate-300 text-slate-400 px-4 pr-0 rounded-full">
             <FontAwesomeIcon icon={solid('search')} size="lg" />
           </button>
