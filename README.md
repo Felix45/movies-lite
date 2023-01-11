@@ -13,7 +13,7 @@
 ## Live Demo
 |Netlify cloud hosting|
 |----------------------|
-|[Currently not available]()|
+|[Click here >>](https://movies-lite.netlify.app/)|
 
 ## Getting Started
 
