@@ -6,17 +6,17 @@ import {
 import logo from '../images/logo.png';
 
 const Navbar = () => (
-  <nav className="flex items-center justify-between flex-wrap bg-black p-6">
-    <div className="flex items-center flex-shrink-0 text-white mr-6">
+  <nav className="flex items-center justify-between flex-wrap bg-black p-4">
+    <div className="flex items-center flex-shrink-0 order-2 text-white md:mr-6">
       <img width="137" viewBox="0 0 54 54" src={logo} alt="Movies Logo" />
     </div>
-    <div className="block lg:hidden">
+    <div className="block lg:hidden order-1">
       <button type="button" className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
         <FontAwesomeIcon icon={solid('list-ul')} size="2x" />
       </button>
     </div>
-    <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-      <div className="text-sm lg:flex-grow">
+    <div className="md:w-full md:block md:flex-grow lg:flex lg:items-center lg:w-auto order-3">
+      <div className="hidden md:block text-sm lg:flex-grow">
         <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
           Home
         </a>
@@ -37,17 +37,20 @@ const Navbar = () => (
         </a>
       </div>
       <div>
-        <form className="flex bg-slate-300 flex-row-reverse relative rounded-full no-focus">
+        <form className="hidden md:flex bg-slate-300 flex-row-reverse relative rounded-full no-focus">
           <input type="text" className="form-input bg-slate-300 pr-4 pl-2 py-2 rounded-full" placeholder="Enter your keywords..." autoComplete="off" />
           <button type="button" className="relative bg-slate-300 text-slate-400 px-4 pr-0 rounded-full">
             <FontAwesomeIcon icon={solid('search')} size="lg" />
           </button>
         </form>
       </div>
-      <div>
-        <a href="/" className="flex items-center inline-block text-sm px-4 py-2 leading-none text-white border-white hover:border-transparent mt-4 lg:mt-0">
+      <div className="flex items-center">
+        <button type="button" className="md:hidden text-slate-400 px-4 pr-0 rounded-full">
+          <FontAwesomeIcon icon={solid('search')} size="2x" />
+        </button>
+        <a href="/" className="flex md:items-center inline-block text-sm px-4 py-2 leading-none text-white border-white hover:border-transparent md:mt-4 lg:mt-0">
           <FontAwesomeIcon icon={solid('user-circle')} size="2x" />
-          <span className="ml-2"> Login / Register</span>
+          <span className="hidden md:block ml-2"> Login / Register</span>
         </a>
       </div>
     </div>
