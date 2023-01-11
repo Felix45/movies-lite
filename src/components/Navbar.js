@@ -8,7 +8,7 @@ import logo from '../images/logo.png';
 const Navbar = () => (
   <nav className="flex items-center justify-between flex-wrap bg-black p-4">
     <div className="flex items-center flex-shrink-0 order-2 text-white md:mr-6">
-      <img width="137" viewBox="0 0 54 54" src={logo} alt="Movies Logo" />
+      <img width="137" src={logo} alt="Movies Logo" />
     </div>
     <div className="block lg:hidden order-1">
       <button type="button" className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
