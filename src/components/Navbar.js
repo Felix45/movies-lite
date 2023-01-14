@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   solid,
 } from '@fortawesome/fontawesome-svg-core/import.macro';
 import logo from '../images/logo.png';
 
-const Navbar = () => (
+const Navbar = ({ setIsOpen }) => (
   <nav className="flex items-center justify-between flex-wrap bg-black p-4">
     <div className="flex items-center flex-shrink-0 order-2 text-white md:mr-6">
       <img width="137" src={logo} alt="Movies Logo" />
@@ -48,13 +49,17 @@ const Navbar = () => (
         <button type="button" className="md:hidden text-slate-400 px-4 pr-0 rounded-full">
           <FontAwesomeIcon icon={solid('search')} size="2x" />
         </button>
-        <a href="/" className="flex md:items-center inline-block text-sm px-4 py-2 leading-none text-white border-white hover:border-transparent md:mt-4 lg:mt-0">
-          <FontAwesomeIcon icon={solid('user-circle')} size="2x" />
-          <span className="hidden md:block ml-2"> Login / Register</span>
-        </a>
+        <div className="flex md:items-center inline-block text-sm px-4 py-2 leading-none text-white border-white hover:border-transparent md:mt-4 lg:mt-0">
+          <FontAwesomeIcon icon={solid('user-circle')} onClick={() => { setIsOpen(true); }} size="2x" />
+          <button type="button" className="hidden md:block ml-2" onClick={() => { setIsOpen(true); }}> Login / Register</button>
+        </div>
       </div>
     </div>
   </nav>
 );
+
+Navbar.propTypes = {
+  setIsOpen: PropTypes.func.isRequired,
+};
 
 export default Navbar;
