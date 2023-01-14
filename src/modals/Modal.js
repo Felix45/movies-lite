@@ -16,7 +16,7 @@ const Modal = ({ setIsOpen }) => {
       id="my-modal"
     >
       <div
-        className="relative top-20 mx-auto p-5 border-0 w-96 shadow-lg rounded-md bg-movie-black"
+        className="relative top-20 mx-auto p-5 border-0 w-80 md:w-96 shadow-lg rounded-md bg-movie-black"
       >
         <div>
           <button
