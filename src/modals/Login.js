@@ -1,15 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Login = ({ setRegister }) => (
+const Login = ({ setRegister }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return (
   <div className="items-center px-4 py-3">
     <h3 className="text-lg leading-6 font-medium text-white mb-5">Sign In</h3>
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
-        <input type="email" className="form-input bg-white pr-4 pl-2 py-2 w-full rounded-md outline-none mb-5" placeholder="Enter email..." autoComplete="off" />
+        <input
+          type="email"
+          className="form-input bg-white pr-4 pl-2 py-2 w-full rounded-md outline-none mb-5"
+          placeholder="Enter email..."
+          autoComplete="off"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
       <div>
-        <input type="password" className="form-input bg-white pr-4 pl-2 py-2 w-full rounded-md outline-none mb-5" placeholder="Enter password..." autoComplete="off" />
+        <input
+          type="password"
+          className="form-input bg-white pr-4 pl-2 py-2 w-full rounded-md outline-none mb-5"
+          placeholder="Enter password..."
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          autoComplete="off"
+        />
       </div>
       <button
         id="ok-btn"
@@ -28,7 +50,8 @@ const Login = ({ setRegister }) => (
       </p>
     </div>
   </div>
-);
+  );
+};
 
 Login.propTypes = {
   setRegister: PropTypes.func.isRequired,
