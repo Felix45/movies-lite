@@ -1,13 +1,26 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { userSignInThunk } from '../redux/slices/authSlice';
 
-const Login = ({ setRegister }) => {
+const Login = ({ setRegister, setIsOpen }) => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { user } = useSelector((state) => state.user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (email.length !== 0 && password.length !== 0) {
+      dispatch(userSignInThunk({ email, password }));
+      setEmail('');
+      setPassword('');
+    }
   };
+
+  if (user.isLoggedIn) {
+    setIsOpen(false);
+  }
 
   return (
     <div className="items-center px-4 py-3">
@@ -21,7 +34,11 @@ const Login = ({ setRegister }) => {
             autoComplete="off"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
+          <div className="hidden bg-red-100 border text-red-500 px-4 py-1 -mt-2 mb-3 rounded relative" role="alert">
+            <span className="block sm:inline">Please enter valid email</span>
+          </div>
         </div>
         <div>
           <input
@@ -31,7 +48,11 @@ const Login = ({ setRegister }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="off"
+            required
           />
+          <div className="hidden bg-red-100 border text-red-500 px-4 py-1 -mt-2 mb-3 rounded relative" role="alert">
+            <span className="block sm:inline">Please enter password</span>
+          </div>
         </div>
         <button
           id="ok-btn"
@@ -48,12 +69,20 @@ const Login = ({ setRegister }) => {
             Sign Up
           </button>
         </p>
+        {
+          'isLoggedIn' in user && !user.isLoggedIn && (
+          <div className="bg-red-100 border text-red-500 rounded-md px-4 py-2 mt-2 mb-3 relative" role="alert">
+            <span className="block sm:inline text-sm">please provide a valid email & password</span>
+          </div>
+          )
+        }
       </div>
     </div>
   );
 };
 
 Login.propTypes = {
+  setIsOpen: PropTypes.func.isRequired,
   setRegister: PropTypes.func.isRequired,
 };
 

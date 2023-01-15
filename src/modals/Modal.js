@@ -8,7 +8,7 @@ import Register from './Register';
 import Login from './Login';
 
 const Modal = ({ setIsOpen }) => {
-  const [register, setRegister] = useState(true);
+  const [register, setRegister] = useState(false);
 
   return (
     <div
@@ -29,7 +29,13 @@ const Modal = ({ setIsOpen }) => {
         </div>
         <div className="mt-3 text-left">
           {
-            register ? <Register setRegister={setRegister} /> : <Login setRegister={setRegister} />
+            register ? <Register setRegister={setRegister} />
+              : (
+                <Login
+                  setRegister={setRegister}
+                  setIsOpen={setIsOpen}
+                />
+              )
           }
         </div>
       </div>
