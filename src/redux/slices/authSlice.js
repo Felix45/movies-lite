@@ -10,7 +10,7 @@ const initialState = {
 export const userSignInThunk = createAsyncThunk(
   'users/signIn',
   async (user) => {
-    const { data } = await http.post('/users', user);
+    const { data } = await http.post('/auth/login', user);
     return data;
   },
 );
@@ -22,9 +22,7 @@ const authSlice = createSlice({
     logout(state) {
       return {
         ...state,
-        user: {
-          id: '', exp: '', email: '', isLoggedIn: false, token: '', username: '',
-        },
+        user: {},
       };
     },
   },
