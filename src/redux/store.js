@@ -4,10 +4,12 @@ import {
   persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER,
 } from 'redux-persist';
 import authSlice from './slices/authSlice';
+import registerSlice from './slices/registerSlice';
 
 const persistConfig = { key: 'database', storage };
 const reducers = combineReducers({
   user: authSlice,
+  signup: registerSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);
