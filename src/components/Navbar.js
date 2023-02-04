@@ -60,9 +60,14 @@ const Navbar = ({ setIsOpen }) => {
             <FontAwesomeIcon icon={solid('search')} size="2x" />
           </button>
           <div className="flex md:items-center inline-block text-sm px-4 py-2 leading-none text-white border-white hover:border-transparent md:mt-4 lg:mt-0">
+            <span className="mx-1">{user.username}</span>
             <FontAwesomeIcon icon={solid('user-circle')} size="2x" />
             {
-              user.isLoggedIn ? <button type="button" className="hidden md:block ml-2" onClick={handleLogout}> Logout </button>
+              user.isLoggedIn ? (
+                <div className="flex">
+                  <button type="button" className="hidden md:block ml-2" onClick={handleLogout}> Logout </button>
+                </div>
+              )
                 : <button type="button" className="hidden md:block ml-2" onClick={() => { setIsOpen(true); }}> Login / Register</button>
             }
           </div>
