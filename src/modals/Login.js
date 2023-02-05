@@ -12,15 +12,15 @@ const Login = ({ setRegister, setIsOpen }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email.length !== 0 && password.length !== 0) {
-      dispatch(userSignInThunk({ email, password }));
-      setEmail('');
-      setPassword('');
+      dispatch(userSignInThunk({ email, password })).then((data) => {
+        if (data.payload.isLoggedIn) {
+          setEmail('');
+          setPassword('');
+          setIsOpen(false);
+        }
+      });
     }
   };
-
-  if (user.isLoggedIn) {
-    setIsOpen(false);
-  }
 
   return (
     <div className="items-center px-4 py-3">
