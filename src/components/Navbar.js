@@ -60,8 +60,11 @@ const Navbar = ({ setIsOpen }) => {
             <FontAwesomeIcon icon={solid('search')} size="2x" />
           </button>
           <div className="flex md:items-center inline-block text-sm px-4 py-2 leading-none text-white border-white hover:border-transparent md:mt-4 lg:mt-0">
-            <span className="mx-1">{user.username}</span>
-            <FontAwesomeIcon icon={solid('user-circle')} size="2x" />
+            <span className="hidden md:block mx-1">{user.username}</span>
+            { !user.isLoggedIn ? (
+              <FontAwesomeIcon className="md:hidden mr-2" onClick={() => { setIsOpen(true); }} icon={solid('sign-in')} size="2x" />)
+              : (<FontAwesomeIcon className="md:hidden mr-2" onClick={handleLogout} icon={solid('user-circle')} size="3x" />)}
+            <FontAwesomeIcon className="hidden md:block" icon={solid('user-circle')} size="2x" />
             {
               user.isLoggedIn ? (
                 <div className="flex">
