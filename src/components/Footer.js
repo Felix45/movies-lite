@@ -1,6 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import footerText from '../data/footer';
 import logo from '../images/logo.png';
 import List from './List';
@@ -14,7 +15,7 @@ const Footer = () => (
       </p>
       <div className="text-white text-sm text-left py-4">
         <a href="https://github.com/felix45" target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={['fab', 'github']} size="2x" />
+          <FontAwesomeIcon icon={faCoffee} size="2x" />
           <span className="ml-2">{footerText.twitter}</span>
         </a>
       </div>

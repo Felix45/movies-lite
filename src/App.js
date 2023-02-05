@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
 import './App.css';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Modal from './modals/Modal';
+import store from './redux/store';
+import Dashboard from './Dashboard';
 
-function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <main>
-      <Navbar setIsOpen={setIsOpen} />
-      <Footer />
-      { isOpen && <Modal setIsOpen={setIsOpen} /> }
-    </main>
-  );
-}
+const persistor = persistStore(store);
+const App = () => (
+  <Router>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+        </Routes>
+      </PersistGate>
+    </Provider>
+  </Router>
+);
 
 export default App;
