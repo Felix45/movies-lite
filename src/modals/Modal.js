@@ -29,7 +29,7 @@ const Modal = ({ setIsOpen }) => {
         </div>
         <div className="mt-3 text-left">
           {
-            register ? <Register setRegister={setRegister} />
+            register ? <Register setRegister={setRegister} setIsOpen={setIsOpen} />
               : (
                 <Login
                   setRegister={setRegister}

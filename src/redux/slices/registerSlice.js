@@ -11,7 +11,6 @@ export const userSignUpThunk = createAsyncThunk(
   'users/signUp',
   async (user) => {
     const { data } = await http.post('/users', user);
-    console.log(data);
     return data;
   },
 );
