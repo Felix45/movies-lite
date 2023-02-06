@@ -4,6 +4,7 @@
 
 > This is a movie streaming site that only streams movies that are free to the public
 
+![](screenshot.png)
 ## Built With
 
 - React JS & Redux
