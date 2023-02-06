@@ -35,7 +35,7 @@ const Carousel = ({ setIsOpen }) => {
   };
 
   const { results } = featured;
-  const movies = results.slice(0, 9);
+  const movies = Array.isArray(results) ? results.slice(0, 9) : [];
 
   return (
     <div
