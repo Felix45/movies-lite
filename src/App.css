@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .carousel-dark .carousel-indicators .active {
-  background-color: #00ACC1;
+  background-color: #00acc1;
 }
