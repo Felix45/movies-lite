@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   solid,
@@ -29,9 +28,9 @@ const Navbar = ({ setIsOpen }) => {
       </div>
       <div className="md:w-full md:block md:flex-grow lg:flex lg:items-center lg:w-auto order-3">
         <div className="hidden md:block text-sm lg:flex-grow">
-          <NavLink to="/home" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
+          <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
             Home
-          </NavLink>
+          </a>
           <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
             Genre
           </a>

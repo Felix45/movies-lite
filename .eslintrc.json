@@ -21,8 +21,7 @@
     "import/no-unresolved": "off",
     "no-param-reassign": "off",
     "no-return-assign": "off",
-    "no-shadow": "off",
-    "global-require": "off"
+    "no-shadow": "off"
   },
   "ignorePatterns": [
     "dist/",
