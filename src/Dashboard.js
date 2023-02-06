@@ -12,7 +12,7 @@ const Dashboard = () => {
     <main>
       <Navbar setIsOpen={setIsOpen} />
       <Outlet />
-      <Carousel />
+      <Carousel setIsOpen={setIsOpen} />
       <Footer />
       { isOpen && <Modal setIsOpen={setIsOpen} /> }
     </main>
