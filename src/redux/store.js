@@ -5,11 +5,13 @@ import {
 } from 'redux-persist';
 import authSlice from './slices/authSlice';
 import registerSlice from './slices/registerSlice';
+import featuredSlice from './slices/featuredSlice';
 
 const persistConfig = { key: 'database', storage };
 const reducers = combineReducers({
   user: authSlice,
   signup: registerSlice,
+  featured: featuredSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);
