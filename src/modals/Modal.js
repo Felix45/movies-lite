@@ -12,7 +12,7 @@ const Modal = ({ setIsOpen }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-slate-300 bg-opacity-95 overflow-y-auto h-full w-full z-30"
+      className="fixed inset-0 bg-slate-300 bg-opacity-95 overflow-y-auto h-full w-full"
       id="my-modal"
     >
       <div
