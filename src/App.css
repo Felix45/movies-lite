@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .carousel-dark .carousel-indicators [data-bs-target] {
   background-color: #fff;
 }
