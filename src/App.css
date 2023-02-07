@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.carousel-dark .carousel-indicators [data-bs-target] {
+  background-color: #fff;
+}
+
 .carousel-dark .carousel-indicators .active {
   background-color: #00acc1;
 }

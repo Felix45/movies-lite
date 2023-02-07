@@ -9,6 +9,8 @@ module.exports = {
         'movie-gray': '#6F6F6F',
         'movie-black': '#212529',
         'movie-green': '#00ACC1',
+        'movie-body': '#111',
+        'movie-text': '#bbb',
       },
       spacing: {
         128: '40rem',

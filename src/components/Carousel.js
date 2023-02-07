@@ -81,41 +81,43 @@ const Carousel = ({ setIsOpen }) => {
                 backgroundPosition: 'center',
               }}
             >
-              <div className="carousel-caption hidden md:block absolute flex-start text-white">
-                <h2 className="text-movie-green font-black text-4xl">{show.title || show.original_title || show.name }</h2>
-                <ul className="flex my-2 font-bold">
-                  <li><span className="bg-movie-green text white p-1 px-2 rounded text-sm">HD</span></li>
-                  <li className="text-white">
-                    <FontAwesomeIcon icon={solid('star')} className="mx-2" size="lg" />
-                    {show.vote_average.toFixed(2)}
-                  </li>
-                  <li className="flex ml-2 text-white">
-                    <ul className="flex">
-                      {
+              <div className="container mx-auto mt-40">
+                <div className="carousel-caption hidden md:block flex-start mt-80 text-white">
+                  <h2 className="text-movie-green font-black text-4xl">{show.title || show.original_title || show.name }</h2>
+                  <ul className="flex my-2 font-bold">
+                    <li><span className="bg-movie-green text white p-1 px-2 rounded text-sm">HD</span></li>
+                    <li className="text-white">
+                      <FontAwesomeIcon icon={solid('star')} className="mx-2" size="lg" />
+                      {show.vote_average.toFixed(2)}
+                    </li>
+                    <li className="flex ml-2 text-white">
+                      <ul className="flex">
+                        {
                         show.genre_ids.map((id) => <li key={uuidv4()} className="ml-2">{genre[id]}</li>)
                       }
-                    </ul>
-                  </li>
-                </ul>
-                <p className="text-white text-white">{show.overview}</p>
-                <div className="flex mt-5 mb-4">
-                  <button
-                    type="button"
-                    className="p-2 px-5 rounded-full border border-movie-green text-movie-green font-bold hover:bg-movie-green hover:text-black"
-                  >
-                    <FontAwesomeIcon icon={solid('play')} size="lg" />
-                    {' '}
-                    Watch now
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleWishList}
-                    className="p-2 px-5 rounded-full border border-text-white ml-3 text-white font-bold hover:bg-white hover:text-black"
-                  >
-                    <FontAwesomeIcon icon={regular('heart')} size="lg" />
-                    {' '}
-                    Add to wishlist
-                  </button>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p className="text-white text-white">{show.overview}</p>
+                  <div className="flex mt-5 mb-4">
+                    <button
+                      type="button"
+                      className="p-2 px-5 rounded-full border border-movie-green text-movie-green font-bold hover:bg-movie-green hover:text-black"
+                    >
+                      <FontAwesomeIcon icon={solid('play')} size="lg" />
+                      {' '}
+                      Watch now
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleWishList}
+                      className="p-2 px-5 rounded-full border border-text-white ml-3 text-white font-bold hover:bg-white hover:text-black"
+                    >
+                      <FontAwesomeIcon icon={regular('heart')} size="lg" />
+                      {' '}
+                      Add to wishlist
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

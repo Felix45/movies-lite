@@ -4,15 +4,17 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Modal from './modals/Modal';
 import Carousel from './components/Carousel';
+import Share from './components/Share';
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <main>
+    <main className="bg-movie-body">
       <Navbar setIsOpen={setIsOpen} />
       <Outlet />
       <Carousel setIsOpen={setIsOpen} />
+      <Share />
       <Footer />
       { isOpen && <Modal setIsOpen={setIsOpen} /> }
     </main>
