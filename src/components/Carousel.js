@@ -45,24 +45,22 @@ const Carousel = ({ setIsOpen }) => {
     >
 
       <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-        <button
-          type="button"
-          data-bs-target="#carouselDarkVariant"
-          data-bs-slide-to="0"
-          className="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        />
         {
-            movies.map((show, index) => (
-              <button
-                type="button"
-                key={uuidv4()}
-                data-bs-target="#carouselDarkVariant"
-                data-bs-slide-to={`${index + 1}`}
-                aria-label={`Slide ${index + 1}`}
-              />
-            ))
+            movies.map((show, index) => {
+              const aria = index === 0 ? 'true' : 'false';
+              const className = index === 0 ? 'active' : '';
+              return (
+                <button
+                  type="button"
+                  key={uuidv4()}
+                  className={`${className}`}
+                  aria-current={aria}
+                  data-bs-target="#carouselDarkVariant"
+                  data-bs-slide-to={`${index}`}
+                  aria-label={`Slide ${index + 1}`}
+                />
+              );
+            })
         }
       </div>
 
