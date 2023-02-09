@@ -19,13 +19,13 @@ const Carousel = ({ setIsOpen }) => {
   const URL = 'https://image.tmdb.org/t/p/original';
 
   useEffect(() => {
-    if (Object.keys(featured).length === 0) {
-      dispatch(featuredMoviesThunk());
-    }
+    const timer = setInterval(
+      () => {
+        dispatch(featuredMoviesThunk()).then(() => dispatch(fetchGenreThunk()));
+      }, 120000,
+    );
 
-    if (Object.keys(genre).length === 0) {
-      dispatch(fetchGenreThunk());
-    }
+    return () => clearInterval(timer);
   }, [featured, genre]);
 
   const handleWishList = () => {
