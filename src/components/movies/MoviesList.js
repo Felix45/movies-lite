@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Movie from './Movie';
 
 const MovieList = ({ shows }) => (
-  <ul className="mt-5 columns-2 gap-4 md:columns-10">
+  <ul className="mt-5 columns-2 gap-4 mx-4 md:columns-10 md:mx-0">
     {
       shows.map((show) => <Movie key={uuidv4()} show={show} />)
     }
