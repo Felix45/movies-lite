@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.play-button:hover .hidden{
+  display: flex;
+}
+
 .carousel-dark .carousel-indicators [data-bs-target] {
   background-color: #fff;
 }
