@@ -1,33 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   solid,
 } from '@fortawesome/fontawesome-svg-core/import.macro';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import MovieList from './movies/MoviesList';
+import { popularMoviesThunk } from '../redux/slices/movieSlice';
 
 const RecommendedShows = () => {
-  const [category, setCategory] = useState({ cat: 'movie', tab: 'mv' });
-  const { featured } = useSelector((state) => state.featured);
+  const dispatch = useDispatch();
+  const [category, setCategory] = useState({ category: 'movie', period: 'week' });
+  const { popular } = useSelector((state) => state.popular);
 
-  const shows = featured.results.filter((show) => show.media_type === category.cat);
+  useEffect(() => {
+    const timer = setInterval(
+      () => {
+        dispatch(popularMoviesThunk(category));
+      }, 1000,
+    );
+
+    return () => clearInterval(timer);
+  }, [category]);
+
+  const { results } = popular;
 
   return (
     <section className="container mt-5 md:mt-10 mx-auto text-slate-400">
       <div className="flex flex-col md:flex-row">
         <h2 className="ml-4 md:ml-0 font-extralight text-3xl">Recommended</h2>
         <div className="m-3 md:m-0">
-          <button type="button" onClick={() => { setCategory({ cat: 'movie', tab: 'mv' }); }} className="rounded text-xs text-white bg-movie-green p-2 ml-2">
-            <FontAwesomeIcon icon={solid('play-circle')} />
+          <button type="button" onClick={() => { setCategory({ category: 'movie', period: 'week' }); }} className="rounded text-xs hover:text-white bg-movie-black focus:bg-movie-green focus:text-white p-2 ml-2">
+            <FontAwesomeIcon className="mr-1" icon={solid('play-circle')} />
             Movies
           </button>
-          <button type="button" onClick={() => { setCategory({ cat: 'tv', tab: 'tv' }); }} className="rounded text-xs bg-movie-black hover:text-white hover:bg-movie-green p-2 ml-2">
-            <FontAwesomeIcon icon={solid('list-ul')} />
+          <button type="button" onClick={() => { setCategory({ category: 'tv', period: 'week' }); }} className="rounded text-xs bg-movie-black hover:text-white focus:bg-movie-green focus:text-white p-2 ml-2">
+            <FontAwesomeIcon className="mr-1" icon={solid('list-ul')} />
             TV Shows
+          </button>
+          <button type="button" onClick={() => { setCategory({ category: 'all', period: 'day' }); }} className="rounded text-xs bg-movie-black hover:text-white focus:bg-movie-green focus:text-white p-2 ml-2">
+            <FontAwesomeIcon className="mr-1" icon={solid('chart-line')} />
+            Trending
           </button>
         </div>
       </div>
-      <MovieList shows={shows} />
+      <MovieList shows={results} category={category.category} />
     </section>
   );
 };

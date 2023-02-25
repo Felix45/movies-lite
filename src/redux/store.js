@@ -7,6 +7,7 @@ import authSlice from './slices/authSlice';
 import registerSlice from './slices/registerSlice';
 import featuredSlice from './slices/featuredSlice';
 import genreSlice from './slices/genreSlice';
+import popularSlice from './slices/movieSlice';
 
 const persistConfig = { key: 'database', storage };
 const reducers = combineReducers({
@@ -14,6 +15,7 @@ const reducers = combineReducers({
   genre: genreSlice,
   signup: registerSlice,
   featured: featuredSlice,
+  popular: popularSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);
