@@ -24,7 +24,7 @@ const LatestMovies = () => {
       <div className="flex flex-col md:flex-row">
         <h2 className="ml-4 md:ml-0 font-extralight text-3xl">Latest Movies</h2>
       </div>
-      <MovieList shows={results} />
+      <MovieList shows={results} category="movie" />
     </section>
   );
 };
