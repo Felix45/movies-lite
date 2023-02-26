@@ -7,6 +7,7 @@ import Carousel from './components/Carousel';
 import Share from './components/Share';
 import LatestMovies from './components/LatestMovies';
 import RecommendedShows from './components/Recommended';
+import LatestSeries from './components/LatestSeries';
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,7 @@ const Dashboard = () => {
       <Share />
       <RecommendedShows />
       <LatestMovies />
+      <LatestSeries />
       <Footer />
       { isOpen && <Modal setIsOpen={setIsOpen} /> }
     </main>
