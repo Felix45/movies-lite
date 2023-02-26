@@ -22,7 +22,7 @@ const LatestSeries = () => {
   return (
     <section className="container mt-5 md:mt-10 mx-auto text-slate-400">
       <div className="flex flex-col md:flex-row">
-        <h2 className="ml-4 md:ml-0 font-extralight text-3xl">Top Rated TV-Series</h2>
+        <h2 className="ml-4 md:ml-0 font-extralight text-3xl">Latest TV-Series</h2>
       </div>
       <MovieList shows={results} category="tv" />
     </section>

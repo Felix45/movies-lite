@@ -10,7 +10,7 @@ const initialState = {
 export const latestSeriesThunk = createAsyncThunk(
   'series/latest',
   async () => {
-    const { data } = await movies.get(`/tv/top_rated?api_key=${API_KEY}&language=en-US&region=USA&page=1`);
+    const { data } = await movies.get(`/trending/tv/week?api_key=${API_KEY}&language=en-US&region=USA&page=2`);
     return data;
   },
 );
