@@ -5,6 +5,8 @@ import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import './App.css';
 import store from './redux/store';
+import Movies from './pages/Movies';
+import Series from './pages/Series';
 import Dashboard from './Dashboard';
 
 const persistor = persistStore(store);
@@ -13,7 +15,10 @@ const App = () => (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />}>
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/tv-series" element={<Series />} />
+          </Route>
         </Routes>
       </PersistGate>
     </Provider>

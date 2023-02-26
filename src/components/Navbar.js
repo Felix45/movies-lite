@@ -29,7 +29,7 @@ const Navbar = ({ setIsOpen }) => {
       </div>
       <div className="md:w-full md:block md:flex-grow lg:flex lg:items-center lg:w-auto order-3">
         <div className="hidden md:block text-sm lg:flex-grow">
-          <NavLink to="/home" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
+          <NavLink to="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
             Home
           </NavLink>
           <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
@@ -38,12 +38,12 @@ const Navbar = ({ setIsOpen }) => {
           <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
             Country
           </a>
-          <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
+          <NavLink to="/movies" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
             Movies
-          </a>
-          <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
+          </NavLink>
+          <NavLink to="/tv-series" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
             TV-Series
-          </a>
+          </NavLink>
           <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8">
             Top IMb
           </a>
