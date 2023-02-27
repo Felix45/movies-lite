@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import 'tw-elements';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -79,7 +80,7 @@ const Carousel = ({ setIsOpen }) => {
                 backgroundPosition: 'center',
               }}
             >
-              <div className="container mx-auto mt-40">
+              <div className="container mx-auto ml-40 mt-40">
                 <div className="carousel-caption hidden md:block flex-start mt-80 text-white">
                   <h2 className="text-movie-green font-black text-4xl">{show.title || show.original_title || show.name }</h2>
                   <ul className="flex my-2 font-bold">
@@ -98,14 +99,14 @@ const Carousel = ({ setIsOpen }) => {
                   </ul>
                   <p className="text-white text-white">{show.overview}</p>
                   <div className="flex mt-5 mb-4">
-                    <button
-                      type="button"
+                    <NavLink
+                      to={`/watch/${show.media_type}/${show.id}`}
                       className="p-2 px-5 rounded-full border border-movie-green text-movie-green font-bold hover:bg-movie-green hover:text-black"
                     >
                       <FontAwesomeIcon icon={solid('play')} size="lg" />
                       {' '}
                       Watch now
-                    </button>
+                    </NavLink>
                     <button
                       type="button"
                       onClick={handleWishList}
