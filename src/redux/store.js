@@ -10,6 +10,7 @@ import genreSlice from './slices/genreSlice';
 import popularSlice from './slices/movieSlice';
 import latestMovieSlice from './slices/latestMovieSlice';
 import latestSeriesSlice from './slices/latestSeriesSlice';
+import watchSlice from './slices/watchSlice';
 
 const persistConfig = { key: 'database', storage };
 const reducers = combineReducers({
@@ -18,6 +19,7 @@ const reducers = combineReducers({
   signup: registerSlice,
   featured: featuredSlice,
   popular: popularSlice,
+  watch: watchSlice,
   latestmovies: latestMovieSlice,
   latestseries: latestSeriesSlice,
 });
