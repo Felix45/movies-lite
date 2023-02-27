@@ -11,7 +11,7 @@ const LatestMovies = () => {
     const timer = setInterval(
       () => {
         dispatch(latestMoviesThunk());
-      }, 1000,
+      }, 120000,
     );
 
     return () => clearInterval(timer);

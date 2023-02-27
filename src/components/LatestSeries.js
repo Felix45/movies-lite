@@ -11,7 +11,7 @@ const LatestSeries = () => {
     const timer = setInterval(
       () => {
         dispatch(latestSeriesThunk());
-      }, 1000,
+      }, 120000,
     );
 
     return () => clearInterval(timer);
