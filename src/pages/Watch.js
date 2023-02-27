@@ -24,7 +24,7 @@ const WatchShow = () => {
           backgroundPosition: 'center',
         }}
       />
-      <div className="" />
+      <div className="container" />
     </section>
   );
 };
