@@ -56,38 +56,44 @@ const WatchShow = () => {
               )}
             </div>
             <p className="text-movie-gray mt-5">{overview}</p>
-            <table className="table-auto mt-5 w-half text-movie-gray text-left">
+            <table className="flex flex-start mt-5 border-collapse table-fixed w-full text-movie-gray text-sm">
               <tbody>
-                <tr>
-                  <td className="col-span-2">Country</td>
-                  <td>{watch.origin_country}</td>
+                {watch.origin_country && (
+                <tr className="mb-2">
+                  <td className="colspan-2">Country</td>
+                  <td><span className="ml-2">{watch.origin_country}</span></td>
                 </tr>
-                <tr className="flex flex-row">
-                  <td className="col-span-2">Genre</td>
+                )}
+                {watch.genres && (
+                <tr className="mb-2">
+                  <td className="colspan-2">Genre</td>
                   <td>
-                    <ul className="flex flex-row ml-20">
-                      {watch.genres.map((genre) => <li className="ml-2" key={uuidv4()}>{genre.name}</li>)}
-                    </ul>
+                    {watch.genres.map((genre) => <span className="ml-2" key={uuidv4()}>{genre.name}</span>)}
                   </td>
                 </tr>
-                <tr>
-                  <td className="col-span-2">Release date</td>
-                  <td>{watch.first_air_date}</td>
+                )}
+                {watch.first_air_date && (
+                <tr className="mb-2">
+                  <td className="colspan-2">Release date</td>
+                  <td><span className="ml-2">{watch.first_air_date}</span></td>
                 </tr>
-                <tr className="flex flex-row">
-                  <td className="col-span-2">Production:</td>
+                )}
+                {productionCompanies && (
+                <tr className="mb-2">
+                  <td className="colspan-2">Production</td>
                   <td>
-                    <ul className="flex flex-row ml-20">
-                      {
-                        productionCompanies.map((prod) => <li className="ml-2" key={uuidv4()}>{prod.name}</li>)
+                    {
+                        productionCompanies.map((prod) => <span className="ml-2" key={uuidv4()}>{prod.name}</span>)
                       }
-                    </ul>
                   </td>
                 </tr>
-                <tr>
-                  <td className="col-span-2">Tagline:</td>
-                  <td><span className="ml-20">{watch.tagline}</span></td>
+                )}
+                {watch.tagline && (
+                <tr className="mb-2">
+                  <td className="colspan-2">Tagline</td>
+                  <td><span className="ml-2">{watch.tagline}</span></td>
                 </tr>
+                )}
               </tbody>
             </table>
           </div>
