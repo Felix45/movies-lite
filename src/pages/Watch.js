@@ -6,8 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   solid,
 } from '@fortawesome/fontawesome-svg-core/import.macro';
-import { watchShowThunk } from '../redux/slices/watchSlice';
+import { watchShowThunk, recommendedShowThunk } from '../redux/slices/watchSlice';
 import { IMG_URL } from '../http/http';
+import MovieList from '../components/movies/MoviesList';
 
 const WatchShow = () => {
   const { id, type } = useParams();
@@ -15,7 +16,8 @@ const WatchShow = () => {
   const { watch } = useSelector((state) => state.watch);
 
   useEffect(() => {
-    dispatch(watchShowThunk({ id, category: type }));
+    dispatch(watchShowThunk({ id, category: type }))
+      .then(() => dispatch(recommendedShowThunk({ id, category: type })));
   }, [id, type]);
 
   const {
@@ -39,13 +41,13 @@ const WatchShow = () => {
           <div className="col-span-2">
             <img className="rounded" src={`${IMG_URL}${posterPath}`} alt={title || originalTitle || name} />
           </div>
-          <div className="col-span-6">
+          <div className="col-span-5">
             <h2 className="text-white font-light text-4xl">{title || originalTitle || name}</h2>
             <div className="flex my-2 font-normal items-baseline">
               <span className="bg-movie-green text white px-2 rounded text-sm">HD</span>
               <span className="text-sm text-movie-gray">
                 <FontAwesomeIcon icon={solid('star')} className="mx-2 text-movie-gray" size="sm" />
-                {watch.vote_average.toFixed(2)}
+                {watch.vote_average}
               </span>
               { watch.runtime && (
               <span className="text-sm text-movie-gray ml-10 -mt-2">
@@ -56,40 +58,50 @@ const WatchShow = () => {
               )}
             </div>
             <p className="text-movie-gray mt-5">{overview}</p>
-            <table className="table-auto mt-5 w-half text-movie-gray text-left">
+            <table className="flex flex-start mt-5 border-collapse table-fixed w-full text-movie-gray text-sm">
               <tbody>
-                <tr>
-                  <td className="col-span-2">Country</td>
-                  <td>{watch.origin_country}</td>
+                {watch.origin_country && (
+                <tr className="mb-2">
+                  <td className="colspan-2">Country</td>
+                  <td><span className="ml-2">{watch.origin_country}</span></td>
                 </tr>
-                <tr className="flex flex-row">
-                  <td className="col-span-2">Genre</td>
+                )}
+                {watch.genres && (
+                <tr className="mb-2">
+                  <td className="colspan-2">Genre</td>
                   <td>
-                    <ul className="flex flex-row ml-20">
-                      {watch.genres.map((genre) => <li className="ml-2" key={uuidv4()}>{genre.name}</li>)}
-                    </ul>
+                    {watch.genres.map((genre) => <span className="ml-2" key={uuidv4()}>{genre.name}</span>)}
                   </td>
                 </tr>
-                <tr>
-                  <td className="col-span-2">Release date</td>
-                  <td>{watch.first_air_date}</td>
+                )}
+                {watch.first_air_date && (
+                <tr className="mb-2">
+                  <td className="colspan-2">Release date</td>
+                  <td><span className="ml-2">{watch.first_air_date}</span></td>
                 </tr>
-                <tr className="flex flex-row">
-                  <td className="col-span-2">Production:</td>
+                )}
+                {productionCompanies && (
+                <tr className="mb-2">
+                  <td className="colspan-2">Production</td>
                   <td>
-                    <ul className="flex flex-row ml-20">
-                      {
-                        productionCompanies.map((prod) => <li className="ml-2" key={uuidv4()}>{prod.name}</li>)
+                    {
+                        productionCompanies.map((prod) => <span className="ml-2" key={uuidv4()}>{prod.name}</span>)
                       }
-                    </ul>
                   </td>
                 </tr>
-                <tr>
-                  <td className="col-span-2">Tagline:</td>
-                  <td><span className="ml-20">{watch.tagline}</span></td>
+                )}
+                {watch.tagline && (
+                <tr className="mb-2">
+                  <td className="colspan-2">Tagline</td>
+                  <td><span className="ml-2">{watch.tagline}</span></td>
                 </tr>
+                )}
               </tbody>
             </table>
+          </div>
+          <div className="col-span-5">
+            <h2 className="text-white font-light text-4xl">You may also like</h2>
+            { watch.recommended && <MovieList shows={watch.recommended.results.slice(0, 10)} category="movie" cols="5" /> }
           </div>
         </div>
       </div>

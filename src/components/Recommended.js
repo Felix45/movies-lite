@@ -43,7 +43,7 @@ const RecommendedShows = () => {
           </button>
         </div>
       </div>
-      <MovieList shows={results} category={category.category} />
+      <MovieList shows={results} category={category.category} cols="10" />
     </section>
   );
 };

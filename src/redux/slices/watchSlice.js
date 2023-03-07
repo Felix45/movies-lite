@@ -15,6 +15,14 @@ export const watchShowThunk = createAsyncThunk(
   },
 );
 
+export const recommendedShowThunk = createAsyncThunk(
+  'watch/recommended',
+  async ({ id, category }) => {
+    const { data } = await movies.get(`/${category}/${id}/recommendations?api_key=${API_KEY}&language=en-US`);
+    return data;
+  },
+);
+
 const watchSlice = createSlice({
   name: 'watch',
   initialState,
@@ -26,6 +34,12 @@ const watchSlice = createSlice({
       state.isLoading = false;
       state.watch = action.payload;
     },
+    [recommendedShowThunk.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.watch = { ...state.watch, recommended: action.payload };
+    },
+    [recommendedShowThunk.pending]: (state) => { state.isLoading = true; },
+    [recommendedShowThunk.rejected]: (state) => { state.isFaild = true; },
     [watchShowThunk.pending]: (state) => { state.isLoading = true; },
     [watchShowThunk.rejected]: (state) => { state.isFaild = true; },
   },
