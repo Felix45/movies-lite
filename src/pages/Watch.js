@@ -39,10 +39,10 @@ const WatchShow = () => {
       />
       <div className="container mt-20 mx-auto">
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-12 md:hidden lg:col-span-3 lg:block mx-5 mr-0">
+          <div className="col-span-12 md:hidden lg:col-span-2 lg:block mx-5 mr-0">
             <img className="rounded" src={`${IMG_URL}${posterPath}`} alt={title || originalTitle || name} />
           </div>
-          <div className="col-span-12 mx-3 md:mx-0 md:col-span-6 lg:col-span-6">
+          <div className="col-span-12 order-2 md:order-1 mx-3 md:mx-0 md:col-span-7 lg:col-span-7">
             <h2 className="text-white font-light text-4xl">{title || originalTitle || name}</h2>
             <div className="flex my-2 font-normal items-baseline">
               <span className="bg-movie-green text-white px-2 rounded text-sm">HD</span>
@@ -100,9 +100,9 @@ const WatchShow = () => {
               </tbody>
             </table>
           </div>
-          <div className="col-span-12 md:col-span-3">
+          <div className="order-2 md:order-3 col-span-12 md:col-span-3">
             { type === 'movie' && <MovieHeader />}
-            { (type === 'tv' && seasons) && <SeriesHeader seasons={watch.seasons} />}
+            { (type === 'tv' && seasons) && <SeriesHeader seasons={watch.seasons} url={{ type, id }} />}
           </div>
         </div>
       </div>
