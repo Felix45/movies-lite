@@ -13,3 +13,20 @@
 .carousel-dark .carousel-indicators .active {
   background-color: #00acc1;
 }
+
+ul.striped-list > li {
+  border-bottom: 1px solid #212529;
+  padding: 6px;
+}
+
+ul.striped-list > li:nth-of-type(odd) {
+  background-color: #111;
+}
+
+ul.striped-list > li:last-child {
+  border-bottom: none;
+}
+
+ul.striped-list li:hover {
+  background-color: #00ACC1;
+}
