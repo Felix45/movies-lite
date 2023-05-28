@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { watchShowThunk, recommendedShowThunk } from '../redux/slices/watchSlice';
 import { IMG_URL } from '../http/http';
-import MovieList from '../components/movies/MoviesList';
+import MovieHeader from '../components/utilities/MovieHeader';
 
 const WatchShow = () => {
   const { id, type } = useParams();
@@ -38,13 +38,13 @@ const WatchShow = () => {
       />
       <div className="container mt-20 mx-auto">
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-12 md:hidden lg:col-span-2 lg:block mx-5">
+          <div className="col-span-12 md:hidden lg:col-span-3 lg:block mx-5 mr-0">
             <img className="rounded" src={`${IMG_URL}${posterPath}`} alt={title || originalTitle || name} />
           </div>
-          <div className="col-span-12 mx-5 md:col-span-6 lg:col-span-6">
+          <div className="col-span-12 mx-3 md:mx-0 md:col-span-6 lg:col-span-6">
             <h2 className="text-white font-light text-4xl">{title || originalTitle || name}</h2>
             <div className="flex my-2 font-normal items-baseline">
-              <span className="bg-movie-green text white px-2 rounded text-sm">HD</span>
+              <span className="bg-movie-green text-white px-2 rounded text-sm">HD</span>
               <span className="text-sm text-movie-gray">
                 <FontAwesomeIcon icon={solid('star')} className="mx-2 text-movie-gray" size="sm" />
                 {watch.vote_average}
@@ -99,9 +99,8 @@ const WatchShow = () => {
               </tbody>
             </table>
           </div>
-          <div className="col-span-12 md:col-span-6 lg:col-span-4">
-            <h2 className="mx-4 text-white font-light text-4xl">You may also like</h2>
-            { watch.recommended && <MovieList shows={watch.recommended.results.slice(0, 10)} category="movie" cols="4" /> }
+          <div className="col-span-12 md:col-span-3">
+            { type === 'movie' && <MovieHeader />}
           </div>
         </div>
       </div>

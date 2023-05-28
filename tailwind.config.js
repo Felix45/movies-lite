@@ -11,6 +11,7 @@ module.exports = {
         'movie-green': '#00ACC1',
         'movie-body': '#111',
         'movie-text': '#bbb',
+        'bg-black': '#000',
       },
       spacing: {
         128: '40rem',
