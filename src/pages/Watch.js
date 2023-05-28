@@ -9,6 +9,7 @@ import {
 import { watchShowThunk, recommendedShowThunk } from '../redux/slices/watchSlice';
 import { IMG_URL } from '../http/http';
 import MovieHeader from '../components/utilities/MovieHeader';
+import SeriesHeader from '../components/utilities/SeriesHeader';
 
 const WatchShow = () => {
   const { id, type } = useParams();
@@ -21,7 +22,7 @@ const WatchShow = () => {
   }, [id, type]);
 
   const {
-    title, overview, original_title: originalTitle, name, poster_path: posterPath,
+    title, overview, seasons, original_title: originalTitle, name, poster_path: posterPath,
     production_companies: productionCompanies,
   } = watch;
 
@@ -101,6 +102,7 @@ const WatchShow = () => {
           </div>
           <div className="col-span-12 md:col-span-3">
             { type === 'movie' && <MovieHeader />}
+            { (type === 'tv' && seasons) && <SeriesHeader seasons={watch.seasons} />}
           </div>
         </div>
       </div>
