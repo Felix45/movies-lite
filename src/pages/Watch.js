@@ -11,6 +11,7 @@ import { IMG_URL } from '../http/http';
 import MovieHeader from '../components/utilities/MovieHeader';
 import SeriesHeader from '../components/utilities/SeriesHeader';
 import CommentBox from '../components/utilities/Comments';
+import SuggestedShows from '../components/utilities/SuggestedShows';
 
 const WatchShow = () => {
   const { id, type } = useParams();
@@ -26,6 +27,8 @@ const WatchShow = () => {
     title, overview, seasons, original_title: originalTitle, name, poster_path: posterPath,
     production_companies: productionCompanies,
   } = watch;
+
+  const { recommended: shows } = watch;
 
   return (
     <section className="relative h-full w-full">
@@ -109,8 +112,13 @@ const WatchShow = () => {
       </div>
 
       <div className="container mx-auto">
-        <div className="col-span-9">
-          <CommentBox />
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-12 md:col-span-9">
+            <CommentBox />
+          </div>
+          <div className="col-span-12 mx-4 md:col-span-3">
+            { shows && <SuggestedShows shows={shows.results} /> }
+          </div>
         </div>
       </div>
     </section>
