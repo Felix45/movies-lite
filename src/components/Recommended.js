@@ -6,6 +6,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import MovieList from './movies/MoviesList';
 import { popularMoviesThunk } from '../redux/slices/movieSlice';
+import PlayButton from './utilities/PlayButton';
 
 const RecommendedShows = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const RecommendedShows = () => {
   return (
     <section className="container mt-5 md:mt-10 mx-auto text-slate-400">
       <div className="flex flex-col md:flex-row">
+        <PlayButton />
         <h2 className="ml-4 md:ml-0 font-extralight text-3xl">Recommended</h2>
         <div className="m-3 md:m-0">
           <button type="button" onClick={() => { setCategory({ category: 'movie', period: 'week' }); }} className="rounded text-xs hover:text-white bg-movie-black focus:bg-movie-green focus:text-white p-2 ml-2">
