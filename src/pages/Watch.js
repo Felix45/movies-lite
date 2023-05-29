@@ -10,6 +10,7 @@ import { watchShowThunk, recommendedShowThunk } from '../redux/slices/watchSlice
 import { IMG_URL } from '../http/http';
 import MovieHeader from '../components/utilities/MovieHeader';
 import SeriesHeader from '../components/utilities/SeriesHeader';
+import CommentBox from '../components/utilities/Comments';
 
 const WatchShow = () => {
   const { id, type } = useParams();
@@ -43,7 +44,7 @@ const WatchShow = () => {
             <img className="rounded" src={`${IMG_URL}${posterPath}`} alt={title || originalTitle || name} />
           </div>
           <div className="col-span-12 order-2 md:order-1 mx-3 md:mx-0 md:col-span-7 lg:col-span-7">
-            <h2 className="text-white font-light text-4xl">{title || originalTitle || name}</h2>
+            <h2 className="text-white font-bold text-4xl">{title || originalTitle || name}</h2>
             <div className="flex my-2 font-normal items-baseline">
               <span className="bg-movie-green text-white px-2 rounded text-sm">HD</span>
               <span className="text-sm text-movie-gray">
@@ -104,6 +105,12 @@ const WatchShow = () => {
             { type === 'movie' && <MovieHeader />}
             { (type === 'tv' && seasons) && <SeriesHeader seasons={watch.seasons} url={{ type, id }} />}
           </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto">
+        <div className="col-span-9">
+          <CommentBox />
         </div>
       </div>
     </section>
