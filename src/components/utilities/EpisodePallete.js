@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
 const EpisodePallete = ({ data, title }) => (
-  <ul className="mt-4 px-4 md:flex md: flex-col md:h-64 overflow-scroll striped-list">
+  <ul className="mt-4 px-4 md:flex md: flex-col md:h-64 overflow-y-scroll striped-list">
     {
         data.map((episode, index) => (
           <li key={uuidv4()} className="p-1 py-2 text-xs cursor-pointer">
