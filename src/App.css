@@ -28,7 +28,7 @@ ul.striped-list > li:last-child {
 }
 
 ul.striped-list li:hover {
-  background-color: #00ACC1;
+  background-color: #00acc1;
 }
 
 ::-webkit-scrollbar {
@@ -41,6 +41,6 @@ ul.striped-list li:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00ACC1;
+  background: #00acc1;
   border-radius: 10px;
 }
