@@ -22,7 +22,6 @@
     "no-param-reassign": "off",
     "no-return-assign": "off",
     "no-shadow": "off",
-    "no-unused-expressions": "off",
     "global-require": "off"
   },
   "ignorePatterns": [

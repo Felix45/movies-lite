@@ -2,7 +2,6 @@
 module.exports = {
   content: [
     './src/**/*.{js,jsx,ts,tsx}', './node_modules/tw-elements/dist/js/**/*.js',
-    './node_modules/react-tailwindcss-select/dist/index.esm.js',
   ],
   theme: {
     extend: {
@@ -12,7 +11,6 @@ module.exports = {
         'movie-green': '#00ACC1',
         'movie-body': '#111',
         'movie-text': '#bbb',
-        'bg-black': '#000',
       },
       spacing: {
         128: '40rem',
