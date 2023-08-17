@@ -10,9 +10,12 @@ const Splash = ({ setIsOpen }) => (
   <section className="bg-movie-body">
     <Carousel setIsOpen={setIsOpen} />
     <Share />
-    <RecommendedShows />
-    <LatestMovies />
-    <LatestSeries />
+
+    <div className="flex flex-col md:w-[80%]">
+      <RecommendedShows />
+      <LatestMovies />
+      <LatestSeries />
+    </div>
   </section>
 );
 
