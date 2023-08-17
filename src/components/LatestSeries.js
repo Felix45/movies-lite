@@ -21,8 +21,8 @@ const LatestSeries = () => {
   const { results } = latestseries;
 
   return (
-    <section className="container-fluid px-5 mt-5 md:mt-10 mx-auto text-slate-400">
-      <div className="flex flex-row pl-5">
+    <section className="container-fluid px-5 md:px-10 mt-5 md:mt-10 mx-auto text-slate-400">
+      <div className="flex flex-row pl-4">
         <PlayButton />
         <h2 className="ml-0 font-extralight text-3xl">Latest TV-Series</h2>
       </div>
