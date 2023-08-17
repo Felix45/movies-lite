@@ -8,8 +8,8 @@ const SuggestedShowList = ({ shows }) => (
   <ul className="mt-5">
     { shows.map((show) => (
       show.poster_path && (
-      <NavLink to={`/watch/${show.media_type}/${show.id}`}>
-        <li className="flex flex-row mb-3 bg-movie-black rounded" key={uuidv4()}>
+      <NavLink to={`/watch/${show.media_type}/${show.id}`} key={uuidv4()}>
+        <li className="flex flex-row mb-3 bg-movie-black rounded">
 
           <span>
             <img src={`${IMG_URL}${show.poster_path}`} alt="" className="object-scale-down h-16 rounded mr-2" />
