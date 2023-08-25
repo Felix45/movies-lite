@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Movie from './Movie';
 
 const MovieList = ({ shows, category }) => {
-  const rowsetting = 'grid mt-8 grid-cols-2 gap-4 mx-4 md:grid-cols-5 md:mx-4 xl:grid-cols-10';
+  const rowsetting = 'grid mt-8 grid-cols-2 gap-4 mx-4 md:grid-cols-5 md:mx-4 xl:grid-cols-7';
 
   return (
     <div>
