@@ -70,7 +70,7 @@ const HomeCarousel = ({ setIsOpen }) => {
         }
       </div>
 
-      <div className="relative w-full overflow-hidden after:clear-both after:block after:content-[''] h-48 md:h-96 lg:h-128">
+      <div className="relative w-full overflow-hidden after:clear-both after:block after:content-[''] h-48 md:h-96 lg:h-100 xl:h-128">
         {
         movies.map((show, index) => {
           const classVal = (index === 0) ? { 'data-te-carousel-active': true } : {};
@@ -88,7 +88,7 @@ const HomeCarousel = ({ setIsOpen }) => {
               data-te-carousel-item
               {...classVal}
             >
-              <div className="container mx-auto ml-40 mt-40 md:mt-10 lg:mt-40">
+              <div className="container mx-auto ml-40 mt-40 md:mt-10 lg:mt-20 xl:mt-40">
                 <div className="carousel-caption hidden flex-start mt-60 text-white md:block md:mt-0">
                   <h2 className="text-movie-green font-black text-4xl mb-4">{show.title || show.original_title || show.name }</h2>
                   <ul className="flex my-2 font-bold">
