@@ -11,7 +11,7 @@ const Splash = ({ setIsOpen }) => (
     <Carousel setIsOpen={setIsOpen} />
     <Share />
 
-    <div className="flex flex-col md:w-[80%]">
+    <div className="container mx-auto">
       <RecommendedShows />
       <LatestMovies />
       <LatestSeries />

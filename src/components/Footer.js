@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +10,9 @@ import List from './List';
 const Footer = () => (
   <footer className="flex flex-row items-center justify-between flex-wrap bg-black text-slate-400 p-4 py-6 my-14">
     <div className="md:w-1/2 flex flex-col items-center md:items-start">
-      <img src={logo} width="137px" alt="Movies Logo" className="rounded py-2" />
+      <NavLink to="/">
+        <img src={logo} width="137px" alt="Movies Logo" className="rounded py-2" />
+      </NavLink>
       <p className="mt-2 mr-6 text-sm">
         {footerText.description}
       </p>

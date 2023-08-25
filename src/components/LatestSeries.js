@@ -21,10 +21,10 @@ const LatestSeries = () => {
   const { results } = latestseries;
 
   return (
-    <section className="container-fluid px-5 mt-5 md:mt-10 mx-auto text-slate-400">
-      <div className="flex flex-row pl-5">
+    <section className="container px-0 md:px-10 mt-5 md:mt-10 mx-auto text-slate-400">
+      <div className="flex flex-row pl-4">
         <PlayButton />
-        <h2 className="ml-0 font-extralight text-3xl">Latest TV-Series</h2>
+        <h2 className="ml-0 font-bold text-white text-3xl">Latest TV-Series</h2>
       </div>
       <MovieList shows={results} category="tv" cols="10" />
     </section>

@@ -21,6 +21,7 @@
     "import/no-unresolved": "off",
     "no-param-reassign": "off",
     "no-return-assign": "off",
+    "react/jsx-props-no-spreading": "off",
     "no-shadow": "off",
     "no-unused-expressions": "off",
     "global-require": "off"

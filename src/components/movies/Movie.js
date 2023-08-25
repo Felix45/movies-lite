@@ -24,7 +24,7 @@ const Movie = ({ show, category }) => {
           </div>
         </NavLink>
       </div>
-      <div className="text-white text-xs h-10 mt-3">{show.title || show.original_title || show.name }</div>
+      <div className="text-white text-xs h-10 mt-3 mb-4">{(show.title || show.original_title || show.name).slice(0, 30)}</div>
       <div className="flex flex-row items-center justify-between">
         <span className="text-movie-gray text-xs">{(new Date(releaseDate)).getFullYear()}</span>
         <span className="border border-gray-300 rounded p-1 text-movie-gray text-xs">{show.media_type || category}</span>
