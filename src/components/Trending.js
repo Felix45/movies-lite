@@ -8,7 +8,7 @@ const Trending = () => {
   const { results: shows } = useSelector((state) => state.trending.trending);
 
   return (
-    <aside className="flex flex-col mt-10 mx-10 lg:ml-0">
+    <aside className="flex flex-col mt-10 mx-5 lg:ml-0">
       <div className="container-fluid flex flex-row justify-between xl:container">
         <div className="flex flex-row">
           <PlayButton />
