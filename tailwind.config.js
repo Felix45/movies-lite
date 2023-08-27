@@ -17,6 +17,9 @@ module.exports = {
       spacing: {
         128: '40rem',
       },
+      screens: {
+        '2xl': '1920px',
+      }
     },
   },
   plugins: [
