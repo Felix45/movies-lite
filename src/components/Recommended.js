@@ -41,10 +41,6 @@ const RecommendedShows = () => {
             <FontAwesomeIcon className="mr-1" icon={solid('list-ul')} />
             TV Shows
           </button>
-          <button type="button" onClick={() => { setCategory({ category: 'all', period: 'day' }); }} className="rounded text-xs bg-movie-black hover:text-white focus:bg-movie-green focus:text-white p-2 ml-2">
-            <FontAwesomeIcon className="mr-1" icon={solid('chart-line')} />
-            Trending
-          </button>
         </div>
       </div>
       <MovieList shows={results} category={category.category} cols="10" />
