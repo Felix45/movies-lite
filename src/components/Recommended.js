@@ -26,7 +26,7 @@ const RecommendedShows = () => {
   const { results } = popular;
 
   return (
-    <section className="container px-0 md:px-10 mt-5 md:mt-10 mx-auto text-slate-400">
+    <section className="container-fluid px-0 md:px-10 mt-5 md:mt-10 mx-auto text-slate-400">
       <div className="flex flex-col pl-1 md:pl-5 md:flex-row">
         <div className="flex flex-row pl-2 md:pl-0">
           <PlayButton />
