@@ -5,16 +5,24 @@ import Share from './components/Share';
 import LatestMovies from './components/LatestMovies';
 import RecommendedShows from './components/Recommended';
 import LatestSeries from './components/LatestSeries';
+import Trending from './components/Trending';
 
 const Splash = ({ setIsOpen }) => (
   <section className="bg-movie-body">
     <Carousel setIsOpen={setIsOpen} />
     <Share />
 
-    <div className="container mx-auto">
-      <RecommendedShows />
-      <LatestMovies />
-      <LatestSeries />
+    <div className="container-fluid mx-auto 2xl:container">
+      <div className="flex flex-col gap-0 lg:flex-row">
+        <div className="flex flex-col lg:w-3/4">
+          <RecommendedShows />
+          <LatestMovies />
+          <LatestSeries />
+        </div>
+        <div className="lg:w-1/4">
+          <Trending />
+        </div>
+      </div>
     </div>
   </section>
 );

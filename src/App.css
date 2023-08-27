@@ -31,6 +31,12 @@ ul.striped-list li:hover {
   background-color: #00acc1;
 }
 
+.trend-list:hover .rank {
+  color: #000;
+  border: 2px solid #000;
+  background-color: #00acc1;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
