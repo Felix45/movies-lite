@@ -13,12 +13,12 @@ const NavTab = () => {
   return (
     <ul className="flex flex-row text-movie-gray">
       <li>
-        <button type="button" onClick={() => setPeriod('day')} className="p-[5px] text-xs border-movie-gray border-[1px] rounded-md ml-2">
+        <button type="button" onClick={() => setPeriod('day')} className={`p-[5px] text-xs ${period === 'day' ? 'border-movie-green' : 'border-movie-gray'} border-[2px] rounded-md ml-2`}>
           Day
         </button>
       </li>
       <li>
-        <button type="button" onClick={() => setPeriod('week')} className="p-[5px] text-xs border-movie-gray border-[1px] rounded-md ml-2">
+        <button type="button" onClick={() => setPeriod('week')} className={`p-[5px] text-xs ${period === 'week' ? 'border-movie-green' : 'border-movie-gray'} border-[2px] rounded-md ml-2`}>
           Week
         </button>
       </li>

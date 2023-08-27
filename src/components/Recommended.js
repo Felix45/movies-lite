@@ -33,11 +33,11 @@ const RecommendedShows = () => {
           <h2 className="ml-0 md:ml-0 font-bold text-white text-3xl">Recommended</h2>
         </div>
         <div className="m-3 ml-0 md:m-0">
-          <button type="button" onClick={() => { setCategory({ category: 'movie', period: 'week' }); }} className="rounded text-xs hover:text-white bg-movie-black focus:bg-movie-green focus:text-white p-2 ml-2">
+          <button type="button" onClick={() => { setCategory({ category: 'movie', period: 'week' }); }} className={`rounded text-xs hover:text-white ${category.category === 'movie' ? 'bg-movie-green text-white' : 'bg-movie-black'} p-2 ml-2`}>
             <FontAwesomeIcon className="mr-1" icon={solid('play-circle')} />
             Movies
           </button>
-          <button type="button" onClick={() => { setCategory({ category: 'tv', period: 'week' }); }} className="rounded text-xs bg-movie-black hover:text-white focus:bg-movie-green focus:text-white p-2 ml-2">
+          <button type="button" onClick={() => { setCategory({ category: 'tv', period: 'week' }); }} className={`rounded text-xs hover:text-white ${category.category === 'tv' ? 'bg-movie-green text-white' : 'bg-movie-black'} p-2 ml-2`}>
             <FontAwesomeIcon className="mr-1" icon={solid('list-ul')} />
             TV Shows
           </button>
