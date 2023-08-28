@@ -19,7 +19,7 @@ module.exports = {
       },
       screens: {
         '2xl': '1920px',
-      }
+      },
     },
   },
   plugins: [

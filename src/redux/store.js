@@ -12,6 +12,7 @@ import latestMovieSlice from './slices/latestMovieSlice';
 import latestSeriesSlice from './slices/latestSeriesSlice';
 import watchSlice from './slices/watchSlice';
 import trendingSlice from './slices/trendingSlice';
+import recentShowsSlice from './slices/recentShowsSlice';
 
 const persistConfig = { key: 'database', storage };
 const reducers = combineReducers({
@@ -23,6 +24,7 @@ const reducers = combineReducers({
   trending: trendingSlice,
   watch: watchSlice,
   latestmovies: latestMovieSlice,
+  recentseries: recentShowsSlice,
   latestseries: latestSeriesSlice,
 });
 
