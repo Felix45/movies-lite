@@ -6,6 +6,7 @@ import LatestMovies from './components/LatestMovies';
 import RecommendedShows from './components/Recommended';
 import LatestSeries from './components/LatestSeries';
 import Trending from './components/Trending';
+import RecentlyUpdated from './components/RecentShows';
 
 const Splash = ({ setIsOpen }) => (
   <section className="bg-movie-body">
@@ -21,6 +22,7 @@ const Splash = ({ setIsOpen }) => (
         </div>
         <div className="lg:w-1/4">
           <Trending />
+          <RecentlyUpdated />
         </div>
       </div>
     </div>
