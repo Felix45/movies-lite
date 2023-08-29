@@ -37,6 +37,10 @@ ul.striped-list li:hover {
   background-color: #00acc1;
 }
 
+.movie:hover .hv-info {
+  display: block;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
