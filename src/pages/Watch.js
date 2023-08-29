@@ -41,7 +41,7 @@ const WatchShow = () => {
           backgroundPosition: 'center',
         }}
       />
-      <div className="container mt-20 mx-auto">
+      <div className="container-fluid px-10 mt-20 mx-auto 2xl:container">
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12 md:hidden lg:col-span-2 lg:block mx-5 mr-0">
             <img className="rounded" src={`${IMG_URL}${posterPath}`} alt={title || originalTitle || name} />
@@ -111,13 +111,13 @@ const WatchShow = () => {
         </div>
       </div>
 
-      <div className="container mx-auto">
+      <div className="container-fluid px-10 mx-auto mt-20 2xl:container">
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12 md:col-span-9">
             <CommentBox />
           </div>
           <div className="col-span-12 mx-4 md:col-span-3">
-            { shows && <SuggestedShows shows={shows.results} /> }
+            { shows && <SuggestedShows shows={shows.results.slice(0, 10)} /> }
           </div>
         </div>
       </div>
