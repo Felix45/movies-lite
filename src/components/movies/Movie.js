@@ -6,12 +6,13 @@ import {
   solid,
 } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { IMG_URL } from '../../http/http';
+import Info from './Info';
 
 const Movie = ({ show, category }) => {
   const releaseDate = show.release_date ? show.release_date.replace(/-/g, '/') : '2022/02/10';
 
   return (
-    <li className="mb-5">
+    <li className="mb-5 movie relative">
       <div className="relative play-button">
         <NavLink to={`/watch/${show.media_type || category}/${show.id}`}>
           <img src={`${IMG_URL}${show.poster_path}`} alt="" className="rounded" />
@@ -29,6 +30,7 @@ const Movie = ({ show, category }) => {
         <span className="text-movie-gray text-xs">{(new Date(releaseDate)).getFullYear()}</span>
         <span className="border border-gray-300 rounded p-1 text-movie-gray text-xs">{show.media_type || category}</span>
       </div>
+      <Info show={show} />
     </li>
   );
 };
