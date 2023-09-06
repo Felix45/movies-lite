@@ -43,7 +43,7 @@ const HomeCarousel = ({ setIsOpen }) => {
   return (
     <div
       id="carouselDarkVariant"
-      className="relative"
+      className="relative mt-10"
       data-te-carousel-init
       data-te-ride="carousel"
     >

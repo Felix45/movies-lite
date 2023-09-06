@@ -18,7 +18,7 @@ const Navbar = ({ setIsOpen }) => {
   };
 
   return (
-    <nav className="flex items-center justify-between bg-black p-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-black p-4">
       <div className="flex items-center flex-shrink-0 order-2 text-white md:hidden md:mr-6 lg:block">
         <NavLink to="/">
           <img width="137" src={logo} alt="Movies Logo" />
