@@ -26,7 +26,7 @@ const LatestSeries = () => {
         <PlayButton />
         <h2 className="ml-0 font-bold text-white text-3xl">Latest TV-Series</h2>
       </div>
-      <MovieList shows={results} category="tv" cols="10" />
+      <MovieList shows={results.slice(0, 14)} category="tv" cols="10" />
     </section>
   );
 };
