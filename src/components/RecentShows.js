@@ -20,7 +20,7 @@ const RecentlyUpdated = () => {
           <h2 className="ml-0 md:ml-0 font-bold text-white text-3xl lg:text-2xl xl:text-3xl">Recently Updated</h2>
         </div>
       </div>
-      {shows && <SuggestedShowList shows={shows} /> }
+      {shows && <SuggestedShowList shows={shows.slice(0, 14)} /> }
     </aside>
   );
 };
