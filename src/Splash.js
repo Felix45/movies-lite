@@ -13,7 +13,7 @@ const Splash = ({ setIsOpen }) => (
     <Carousel setIsOpen={setIsOpen} />
     <Share />
 
-    <div className="container mx-auto">
+    <div className="container-fluid mx-auto md:container">
       <div className="flex flex-col gap-0 lg:flex-row">
         <div className="flex flex-col lg:w-3/4">
           <RecommendedShows />
